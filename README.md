@@ -37,7 +37,7 @@ Example Playbook
     - hosts: servers
     - name: Include role devpi
       ansible.builtin.include_role:
-        name: rezizter.ansible-devpi
+        name: rezizter.ansible-role-devpi
         apply:
           tags:
             - devpi
