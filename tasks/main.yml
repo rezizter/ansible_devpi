@@ -1,0 +1,62 @@
+---
+- name: Install packages
+  ansible.builtin.pip:
+    name:
+      - devpi-server=={{ devpi_version }}
+      - devpi-client
+      - wheel
+    state: present
+
+- name: Initialize devpi
+  ansible.builtin.shell: "/usr/local/bin/devpi-init"
+  ignore_errors: yes
+
+- name: Startup devpi
+  ansible.builtin.systemd:
+    name: monit
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+
+- name: Create the devpi directory
+  ansible.builtin.file:
+    path: /mnt/data/devpi
+    state: directory
+    mode: '0755'
+
+- name: Create the monit directory
+  ansible.builtin.file:
+    path: /etc/monit
+    state: directory
+    mode: '0755'
+
+- name: Create the monit config directory
+  ansible.builtin.file:
+    path: /etc/monit/conf.d
+    state: directory
+    mode: '0755'
+
+- name: Add the systemd file for devpi
+  become: yes
+  template:
+    src: devpi.service
+    dest: /etc/systemd/system/devpi.service
+  notify:
+    - restart devpi
+
+- name: Add the devpi binaries to the bash path
+  become: yes
+  template:
+    src: devpi_path.sh
+    dest: /etc/profile.d/devpi_path.sh
+
+# Only needed if you are installing pip packages locally
+#- name: Create ~/.pip/wheelhouse
+#  file:
+#    path: "{{ devpi_wheelhouse }}"
+#    state: directory
+
+#- name: ~/.pip.conf
+#  template:
+#    src: pip.conf
+#    dest: "{{ ansible_env.HOME }}/.pip/pip.conf"

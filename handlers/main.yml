@@ -1,0 +1,5 @@
+---
+- name: restart devpi
+  ansible.builtin.systemd:
+    name: devpi.service
+    state: restarted
