@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: rezizter.ansible_devpi
+  role_name: rezizter.ansible-devpi
   description: Install devpi on an EL server
   license: BSD-2-Clause
 
