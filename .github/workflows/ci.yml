@@ -46,7 +46,7 @@ jobs:
           path: 'rezizter.ansible_devpi'
 
       - name: Install test dependencies.
-        run: pip3 install ansible molecule molecule-plugins[docker] docker
+        run: pip3 install ansible molecule molecule-plugins[docker] docker python3
 
       - name: Run Molecule tests.
         run: molecule test
