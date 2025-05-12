@@ -6,6 +6,6 @@
     loki_install: true
 
   tasks:
-    - name: "Include rezizter.ansible-role-devpi"
+    - name: "Include rezizter.ansible_devpi"
       ansible.builtin.include_role:
-        name: "rezizter.ansible-role-devpi"
+        name: "rezizter.ansible_devpi"
