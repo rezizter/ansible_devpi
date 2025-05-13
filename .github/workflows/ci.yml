@@ -23,9 +23,6 @@ jobs:
         with:
           path: 'rezizter.ansible_devpi'
 
-      - name: Install pip
-        run: sudo yum -y install pip3
-
       - name: Install test dependencies.
         run: pip3 install yamllint
 
@@ -47,6 +44,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: 'rezizter.ansible_devpi'
+
+      - name: Install pip
+        run: sudo yum -y install pip3
 
       - name: Install test dependencies.
         run: pip3 install ansible molecule molecule-plugins[docker] docker
