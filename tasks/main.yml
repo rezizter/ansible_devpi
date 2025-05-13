@@ -1,8 +1,4 @@
 ---
-- name: Install ipython3-packaging
-  ansible.builtin.pip:
-    name: python3-packaging
-
 - name: Install packages
   ansible.builtin.pip:
     name:
