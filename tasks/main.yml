@@ -5,8 +5,6 @@
       - devpi-server=={{ devpi_version }}
       - devpi-client
       - wheel
-    vars:
-      ansible_python_interpreter: "/usr/bin/python3"
     state: present
 
 - name: Initialize devpi
