@@ -46,7 +46,7 @@ jobs:
           path: 'rezizter.ansible_devpi'
 
       - name: Install pip
-        run: sudo yum -y install pip3
+        run: sudo apt-get -y install pip3
 
       - name: Install test dependencies.
         run: pip3 install ansible molecule molecule-plugins[docker] docker
