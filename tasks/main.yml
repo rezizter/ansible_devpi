@@ -1,4 +1,8 @@
 ---
+- name: Install packaging via pip
+  ansible.builtin.pip:
+    name: packaging
+
 - name: Install packages
   ansible.builtin.pip:
     name:
