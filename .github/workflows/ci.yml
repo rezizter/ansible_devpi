@@ -23,6 +23,9 @@ jobs:
         with:
           path: 'rezizter.ansible_devpi'
 
+      - name: Install pip
+        run: yum install pip3
+
       - name: Install test dependencies.
         run: pip3 install yamllint
 
