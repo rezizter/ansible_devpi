@@ -4,6 +4,7 @@
     name:
       - devpi-server=={{ devpi_version }}
       - devpi-client
+      - devpi-web
       - wheel
     state: present
 
