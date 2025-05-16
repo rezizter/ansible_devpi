@@ -6,6 +6,8 @@
       - devpi-client
       - devpi-web
       - wheel
+      - setuptools
+      - packaging
     state: present
 
 - name: Initialize devpi
