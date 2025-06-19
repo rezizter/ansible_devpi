@@ -13,6 +13,7 @@
   ansible.builtin.shell: '/usr/local/bin/devpi-init \
     --serverdir /mnt/data/devpi/'
   run_once: true
+  register: data
   ignore_errors: true
 
 - name: Create the devpi directory
