@@ -7,7 +7,7 @@
       - devpi-web
       - wheel
       - setuptools
-      - packaging
+        #- packaging
     state: present
 
 - name: Initialize devpi
