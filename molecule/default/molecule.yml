@@ -17,4 +17,4 @@ provisioner:
   name: ansible
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
-    ansible_python_interpreter: '/usr/bin/python3.9'
+    ansible_python_interpreter: '/usr/bin/python3'
