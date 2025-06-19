@@ -50,6 +50,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install test dependencies.
+        run: pip3 install ansible molecule molecule-plugins[docker] docker packaging setuptools devpi-server==6.9.2
+
       - name: Run Molecule tests.
         run: molecule test
         env:
