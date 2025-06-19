@@ -1,8 +1,8 @@
 ---
 dependency:
   name: galaxy
-driver:
-  name: podman
+  options:
+    requirements-file: requirements.yml
 platforms:
   - name: molecule-ubuntu
     image: ubuntu:18.04
