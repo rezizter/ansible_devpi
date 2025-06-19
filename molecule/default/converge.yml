@@ -6,6 +6,7 @@
       yum:
         name:
           - python3
+          - python3-setuptools
     - name: "Include role"
       ansible.builtin.include_role:
         name: "rezizter.ansible_devpi"
