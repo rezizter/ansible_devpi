@@ -9,3 +9,5 @@ platforms:
   - name: almalinux-9
     image: almalinux:9
     command: /sbin/init
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
