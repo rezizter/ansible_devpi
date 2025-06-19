@@ -30,11 +30,6 @@ jobs:
         run: |
           yamllint .
 
-  inventory:
-    host_vars:
-      my_instance:
-        ansible_python_interpreter: '/usr/bin/python3.9'
-
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
