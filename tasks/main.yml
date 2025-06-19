@@ -2,12 +2,11 @@
 - name: Install packages
   ansible.builtin.pip:
     name:
-      - devpi-server=={{ devpi_version }}
+      #- devpi-server=={{ devpi_version }}
       - devpi-client
       - devpi-web
       - wheel
       - setuptools
-        #- packaging
     state: present
 
 - name: Initialize devpi
