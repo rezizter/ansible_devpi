@@ -6,5 +6,6 @@ driver:
   options:
     requirements-file: requirements.yml
 platforms:
-  - name: molecule-ubuntu
+  - name: almalinux-9
     image: almalinux:9
+    command: /sbin/init
