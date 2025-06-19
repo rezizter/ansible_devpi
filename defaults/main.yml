@@ -1,4 +1,4 @@
 ---
 devpi_port: "3141"
 devpi_wheelhouse: "{{ansible_env.HOME}}/.pip/wheelhouse"
-devpi_version: "latest"
+devpi_version: 6.9.2
