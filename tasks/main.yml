@@ -2,7 +2,7 @@
 - name: Install packages
   ansible.builtin.pip:
     name:
-      #- devpi-server=={{ devpi_version }}
+      # - devpi-server=={{ devpi_version }}
       - devpi-client
       - devpi-web
       - wheel
@@ -10,8 +10,9 @@
     state: present
 
 - name: Initialize devpi
-  ansible.builtin.shell: '/usr/local/bin/devpi-init --serverdir /mnt/data/devpi/'
-  ignore_errors: yes
+  ansible.builtin.shell:
+    - '/usr/local/bin/devpi-init --serverdir /mnt/data/devpi/'
+  ignore_errors: true
 
 - name: Create the devpi directory
   ansible.builtin.file:
@@ -20,7 +21,7 @@
     mode: '0755'
 
 - name: Add the systemd file for devpi
-  become: yes
+  become: true
   template:
     src: devpi.service
     dest: /etc/systemd/system/devpi.service
@@ -28,18 +29,7 @@
     - restart devpi
 
 - name: Add the devpi binaries to the bash path
-  become: yes
+  become: true
   template:
     src: devpi_path.sh
     dest: /etc/profile.d/devpi_path.sh
-
-# Only needed if you are installing pip packages locally
-#- name: Create ~/.pip/wheelhouse
-#  file:
-#    path: "{{ devpi_wheelhouse }}"
-#    state: directory
-
-#- name: ~/.pip.conf
-#  template:
-#    src: pip.conf
-#    dest: "{{ ansible_env.HOME }}/.pip/pip.conf"
