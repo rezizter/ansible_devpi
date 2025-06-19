@@ -6,8 +6,8 @@ driver:
   options:
     requirements-file: requirements.yml
 platforms:
-  - name: almalinux-9
-    image: almalinux:9
+  - name: almalinux-8
+    image: almalinux:8
     command: /sbin/init
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
