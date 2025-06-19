@@ -45,8 +45,10 @@ jobs:
         with:
           path: 'rezizter.ansible_devpi'
 
-      - name: Install pip
-        run: sudo apt-get -y install python3-pip python3-packaging
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.6"
 
       - name: Install test dependencies.
         run: pip3 install ansible molecule molecule-plugins[docker] docker
