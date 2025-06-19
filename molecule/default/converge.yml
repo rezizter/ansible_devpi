@@ -9,7 +9,7 @@
       - name: ipaddress
         version: "1.0.18"
       # Test installing a package by name.
-      - colorama
+      - packaging
 
   pre_tasks:
     - name: Update apt cache.
