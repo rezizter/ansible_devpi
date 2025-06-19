@@ -15,6 +15,8 @@
   run_once: true
   register: data
   ignore_errors: true
+  tags:
+    - molecule-idempotence-notest
 
 - name: Create the devpi directory
   ansible.builtin.file:
